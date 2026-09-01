@@ -1,0 +1,132 @@
+{
+  "_version": "1.73.1",
+  "sap.app": {
+    "id": "zmesconfrouter.zmesconfrouter",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.31.1",
+      "toolsId": "c9a9ea9d-6399-4774-b898-1a4c72ae06b0"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "intent1": {
+          "semanticObject": "ZmesConfRouter",
+          "action": "router",
+          "title": "{{appTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          },
+          "hideLauncher": true
+        }
+      }
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata4/sap/zui_mes_conf_router/srvd/sap/zui_mes_pp_conf_session_router/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.10",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "zmesconfrouter.zmesconfrouter.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "zmesconfrouter.zmesconfrouter.view",
+        "async": true,
+        "viewPath": "zmesconfrouter.zmesconfrouter.view"
+      },
+      "routes": [
+        {
+          "name": "RouteSessionRouter",
+          "pattern": ":?query:",
+          "target": [
+            "TargetSessionRouter"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetSessionRouter": {
+          "id": "SessionRouter",
+          "name": "SessionRouter"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "zmesconfrouter.zmesconfrouter.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
