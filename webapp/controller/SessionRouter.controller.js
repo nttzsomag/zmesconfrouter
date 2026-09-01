@@ -5,6 +5,6 @@ sap.ui.define([
 
     return Controller.extend("zmesconfrouter.zmesconfrouter.controller.SessionRouter", {
         onInit() {
-        } 
+        }  
     });
 });
