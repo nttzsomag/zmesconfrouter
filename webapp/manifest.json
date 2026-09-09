@@ -7,8 +7,8 @@
     "applicationVersion": {
       "version": "0.0.1"
     },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
+    "title": "Betöltés",
+    "description": ".....",
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
@@ -86,47 +86,6 @@
           "earlyRequests": true
         }
       }
-    },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "transition": "slide",
-        "type": "View",
-        "viewType": "XML",
-        "path": "zmesconfrouter.zmesconfrouter.view",
-        "async": true,
-        "viewPath": "zmesconfrouter.zmesconfrouter.view"
-      },
-      "routes": [
-        {
-          "name": "RouteSessionRouter",
-          "pattern": ":?query:",
-          "target": [
-            "TargetSessionRouter"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetSessionRouter": {
-          "id": "SessionRouter",
-          "name": "SessionRouter"
-        }
-      }
-    },
-    "rootView": {
-      "viewName": "zmesconfrouter.zmesconfrouter.view.App",
-      "type": "XML",
-      "id": "App",
-      "async": true
     }
   }
 }
